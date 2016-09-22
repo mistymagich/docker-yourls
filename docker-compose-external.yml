@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+
+  yourls:
+    build: ./
+    environment:
+      - YOURLS_DB_USER=yourls
+      - YOURLS_DB_PASS=yourlspass
+      - YOURLS_DB_NAME=yourls
+      - YOURLS_DB_HOST=172.17.0.1
+      - YOURLS_SITE=http://example.jp
+      - YOURLS_USERNAME=yourlsadmin
+      - YOURLS_PASSWORD=yourlspass
+    ports:
+      - "80:80"

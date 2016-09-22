@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_USER=yourls
+      - MYSQL_PASSWORD=yourlspass
+      - MYSQL_DATABASE=yourls
+
+  yourls:
+    build: ./
+    links:
+      - mysql:mysql
+    environment:
+      - YOURLS_DB_USER=yourls
+      - YOURLS_DB_PASS=yourlspass
+      - YOURLS_DB_NAME=yourls
+      - YOURLS_DB_HOST=mysql
+      - YOURLS_SITE=http://example.jp
+      - YOURLS_USERNAME=yourlsadmin
+      - YOURLS_PASSWORD=yourlspass
+    ports:
+      - "80:80"
