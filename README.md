@@ -61,7 +61,7 @@ Access YOURLS_SITE.(For example, http://example.jp)
 
 ```
 vi start.sh
-To edit a variable of *docker-compose.yml* if necessary.
+To edit a variable of *start.sh* if necessary.
 
 - build container
 $ ./build.sh
